@@ -1,0 +1,62 @@
+{
+    "name": "first-network-hospital1",
+    "version": "1.0.0",
+    "client": {
+        "organization": "hospital1",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "hospital1": {
+            "mspid": "hospital1MSP",
+            "peers": [
+                "peer0.hospital1.tfm.com",
+                "peer1.hospital1.tfm.com"
+            ],
+            "certificateAuthorities": [
+                "ca.hospital1.tfm.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.hospital1.tfm.com": {
+            "url": "grpcs://peer0.hospital1.tfm.com:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICWzCCAgGgAwIBAgIQHgSTeEXDmTXRS5k38udlmjAKBggqhkjOPQQDAjB4MQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEaMBgGA1UEChMRaG9zcGl0YWwxLnRmbS5jb20xIDAeBgNVBAMTF3Rs\nc2NhLmhvc3BpdGFsMS50Zm0uY29tMB4XDTIyMDkxMTExMTcwMFoXDTMyMDkwODEx\nMTcwMFoweDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNV\nBAcTDVNhbiBGcmFuY2lzY28xGjAYBgNVBAoTEWhvc3BpdGFsMS50Zm0uY29tMSAw\nHgYDVQQDExd0bHNjYS5ob3NwaXRhbDEudGZtLmNvbTBZMBMGByqGSM49AgEGCCqG\nSM49AwEHA0IABED9OBYCKqs+Flb6/JzeGo4JL1OU3+wT3mM0NID3l8EEXgu01lMz\nkDNwogR4Wx9kq2oHsrTVaO/rZD5Zsoy55WyjbTBrMA4GA1UdDwEB/wQEAwIBpjAd\nBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zAp\nBgNVHQ4EIgQgwtbvcmmcG9AB5T+JlvDFepmdWV7b/nOYcJd71WVYhUEwCgYIKoZI\nzj0EAwIDSAAwRQIgDlZls/3AGvuGpkW2tR/Xkhgj18LqYIYPgc2FhtRJsDUCIQCX\nfAKWOEl4u/c+RYp3lA1Aup7Ab9j/enxouR/4hScgCg==\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.hospital1.tfm.com",
+                "hostnameOverride": "peer0.hospital1.tfm.com"
+            }
+        },
+	"peer1.hospital1.tfm.com": {
+            "url": "grpcs://peer1.hospital1.tfm.com:8051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICWzCCAgGgAwIBAgIQHgSTeEXDmTXRS5k38udlmjAKBggqhkjOPQQDAjB4MQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEaMBgGA1UEChMRaG9zcGl0YWwxLnRmbS5jb20xIDAeBgNVBAMTF3Rs\nc2NhLmhvc3BpdGFsMS50Zm0uY29tMB4XDTIyMDkxMTExMTcwMFoXDTMyMDkwODEx\nMTcwMFoweDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNV\nBAcTDVNhbiBGcmFuY2lzY28xGjAYBgNVBAoTEWhvc3BpdGFsMS50Zm0uY29tMSAw\nHgYDVQQDExd0bHNjYS5ob3NwaXRhbDEudGZtLmNvbTBZMBMGByqGSM49AgEGCCqG\nSM49AwEHA0IABED9OBYCKqs+Flb6/JzeGo4JL1OU3+wT3mM0NID3l8EEXgu01lMz\nkDNwogR4Wx9kq2oHsrTVaO/rZD5Zsoy55WyjbTBrMA4GA1UdDwEB/wQEAwIBpjAd\nBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zAp\nBgNVHQ4EIgQgwtbvcmmcG9AB5T+JlvDFepmdWV7b/nOYcJd71WVYhUEwCgYIKoZI\nzj0EAwIDSAAwRQIgDlZls/3AGvuGpkW2tR/Xkhgj18LqYIYPgc2FhtRJsDUCIQCX\nfAKWOEl4u/c+RYp3lA1Aup7Ab9j/enxouR/4hScgCg==\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.hospital1.tfm.com",
+                "hostnameOverride": "peer1.hospital1.tfm.com"
+            }
+        }
+
+	
+    },
+    "certificateAuthorities": {
+        "ca.hospital1.tfm.com": {
+            "url": "https://ca.hospital1.tfm.com:7054",
+            "caName": "ca.hospital1.tfm.com",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICWzCCAgGgAwIBAgIQHgSTeEXDmTXRS5k38udlmjAKBggqhkjOPQQDAjB4MQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEaMBgGA1UEChMRaG9zcGl0YWwxLnRmbS5jb20xIDAeBgNVBAMTF3Rs\nc2NhLmhvc3BpdGFsMS50Zm0uY29tMB4XDTIyMDkxMTExMTcwMFoXDTMyMDkwODEx\nMTcwMFoweDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNV\nBAcTDVNhbiBGcmFuY2lzY28xGjAYBgNVBAoTEWhvc3BpdGFsMS50Zm0uY29tMSAw\nHgYDVQQDExd0bHNjYS5ob3NwaXRhbDEudGZtLmNvbTBZMBMGByqGSM49AgEGCCqG\nSM49AwEHA0IABED9OBYCKqs+Flb6/JzeGo4JL1OU3+wT3mM0NID3l8EEXgu01lMz\nkDNwogR4Wx9kq2oHsrTVaO/rZD5Zsoy55WyjbTBrMA4GA1UdDwEB/wQEAwIBpjAd\nBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zAp\nBgNVHQ4EIgQgwtbvcmmcG9AB5T+JlvDFepmdWV7b/nOYcJd71WVYhUEwCgYIKoZI\nzj0EAwIDSAAwRQIgDlZls/3AGvuGpkW2tR/Xkhgj18LqYIYPgc2FhtRJsDUCIQCX\nfAKWOEl4u/c+RYp3lA1Aup7Ab9j/enxouR/4hScgCg==\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}

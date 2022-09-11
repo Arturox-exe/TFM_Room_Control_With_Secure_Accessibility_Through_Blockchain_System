@@ -1,0 +1,68 @@
+
+OrdererOrgs:
+  # ---------------------------------------------------------------------------
+  # Orderer
+  # ---------------------------------------------------------------------------
+  - Name: Orderer
+    Domain: tfm.com
+    EnableNodeOUs: true
+
+    # ---------------------------------------------------------------------------
+    # "Specs" - See PeerOrgs below for complete description
+    # ---------------------------------------------------------------------------
+    Specs:
+      - Hostname: orderer
+        SANS:
+            - "localhost"
+            - "127.0.0.1"
+      - Hostname: orderer2
+        SANS:
+          - "localhost"
+          - "127.0.0.1"
+      - Hostname: orderer3
+        SANS:
+            - "localhost"
+            - "127.0.0.1"
+
+# ---------------------------------------------------------------------------
+# "PeerOrgs" - Definition of organizations managing peer nodes
+# ---------------------------------------------------------------------------
+PeerOrgs:
+  # ---------------------------------------------------------------------------
+  # hospital1
+  # ---------------------------------------------------------------------------
+  - Name: hospital1
+    Domain: hospital1.tfm.com
+    EnableNodeOUs: true
+
+    Template:
+      Count: 2
+      SANS:
+        - "localhost"
+
+    Users:
+      Count: 1
+
+  - Name: hospital2
+    Domain: hospital2.tfm.com
+    EnableNodeOUs: true
+
+    Template:
+      Count: 2
+      SANS:
+        - "localhost"
+
+    Users:
+      Count: 1
+
+  - Name: hospital3
+    Domain: hospital3.tfm.com
+    EnableNodeOUs: true
+
+    Template:
+      Count: 2
+      SANS:
+        - "localhost"
+
+    Users:
+      Count: 1

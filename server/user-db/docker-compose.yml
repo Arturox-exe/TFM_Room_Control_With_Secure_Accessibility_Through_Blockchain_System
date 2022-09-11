@@ -1,0 +1,24 @@
+version: '3.5'
+services:
+  db:
+    image: 'postgres:latest'
+    container_name: 'user-db'
+    restart: always
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./db-data:/var/lib/postgresql/data2
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: hospital-db
+    networks:
+      - hospital
+
+volumes:
+  db-data:
+    driver: local
+networks:
+  hospital:
+    name: hospital

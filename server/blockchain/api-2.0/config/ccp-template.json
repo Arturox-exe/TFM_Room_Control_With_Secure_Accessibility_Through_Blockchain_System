@@ -1,0 +1,62 @@
+{
+    "name": "first-network-${ORG}",
+    "version": "1.0.0",
+    "client": {
+        "organization": "${ORG}",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "${ORG}": {
+            "mspid": "${ORG}MSP",
+            "peers": [
+                "peer0.${ORG}.tfm.com",
+                "peer1.${ORG}.tfm.com"
+            ],
+            "certificateAuthorities": [
+                "ca.${ORG}.tfm.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.${ORG}.tfm.com": {
+            "url": "grpcs://peer0.${ORG}.tfm.com:${P0PORT}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.${ORG}.tfm.com",
+                "hostnameOverride": "peer0.${ORG}.tfm.com"
+            }
+        },
+	"peer1.${ORG}.tfm.com": {
+            "url": "grpcs://peer1.${ORG}.tfm.com:${P0PORT1}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM1}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.${ORG}.tfm.com",
+                "hostnameOverride": "peer1.${ORG}.tfm.com"
+            }
+        }
+
+	
+    },
+    "certificateAuthorities": {
+        "ca.${ORG}.tfm.com": {
+            "url": "https://ca.${ORG}.tfm.com:${CAPORT}",
+            "caName": "ca.${ORG}.tfm.com",
+            "tlsCACerts": {
+                "pem": "${CAPEM}"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}
