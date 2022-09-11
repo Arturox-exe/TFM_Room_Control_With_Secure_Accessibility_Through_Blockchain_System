@@ -1,7 +1,7 @@
 
-# Argos Hyperledger farbric blockchain
+# Hyperledger farbric blockchain
 
-Red fabric para el pryecto ARGOS. La red esta diseñada para lanzarse con docker-compose.
+Red fabric. La red esta diseñada para lanzarse con docker-compose.
 
 # Instalación
 
