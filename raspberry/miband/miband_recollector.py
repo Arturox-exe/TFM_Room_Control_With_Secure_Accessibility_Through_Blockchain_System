@@ -20,7 +20,7 @@ room = sys.argv[1]
 firabase_room = "/" + room
 
 
-conn = psycopg2.connect("dbname=hospital-db user=postgres password=root host=192.168.1.23")
+conn = psycopg2.connect("dbname=hospital-db user=postgres password=root host=tfmserver.ddns.net")
 cur = conn.cursor()
 cur.execute("select * from hospital.user where room = {} and role = {}".format("'"+room+"'", 2))
     
@@ -39,7 +39,7 @@ illnessDB = row[6]
 
 
 
-broker = '192.168.1.23'
+broker = 'tfmserver.ddns.net'
 port = 1883
 topic = "hospital/patient/" + str(idDB)
 

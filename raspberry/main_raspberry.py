@@ -29,7 +29,7 @@ default_app = firebase_admin.initialize_app(cred, {
     'databaseURL':"https://iot-tfm-default-rtdb.europe-west1.firebasedatabase.app/"
     })
 
-url = "http://192.168.1.23:4000"
+url = "http://tfmserver.ddns.net:4000"
 
 login_enpoint = url + "/login"
 login_data = { "username": "user1", "orgName": "hospital1"}
@@ -133,7 +133,7 @@ class App(Tk):
 
     def get_user_database(self, text, hash):
 
-        conn = psycopg2.connect("dbname=hospital-db user=postgres password=root host=192.168.1.23")
+        conn = psycopg2.connect("dbname=hospital-db user=postgres password=root host=tfmserver.ddns.net")
 
         cur = conn.cursor()
 
@@ -195,7 +195,7 @@ class App(Tk):
 
     def name_surname_database(self, id):
 
-        conn = psycopg2.connect("dbname=hospital-db user=postgres password=root host=192.168.1.23")
+        conn = psycopg2.connect("dbname=hospital-db user=postgres password=root host=tfmserver.ddns.net")
         cur = conn.cursor()
         cur.execute("select name, surname from hospital.user where id = {}".format(id))
         #if(cur.rowcount == 0):
@@ -238,7 +238,7 @@ class App(Tk):
         now = datetime.now()
         date = now.strftime("%d/%m/%Y %H:%M:%S")
 
-        conn = psycopg2.connect("dbname=hospital-db user=postgres password=root host=192.168.1.23")
+        conn = psycopg2.connect("dbname=hospital-db user=postgres password=root host=tfmserver.ddns.net")
         cur = conn.cursor()
         cur.execute("select * from hospital.user where room = {} and role = {}".format("'"+room+"'", 2))
         if(cur.rowcount == 0):

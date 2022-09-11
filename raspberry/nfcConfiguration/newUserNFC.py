@@ -5,7 +5,7 @@ import time
 import hashlib
 import psycopg2
 try:
-    conn = psycopg2.connect("dbname=hospital-db user=postgres password=root host=192.168.1.23")
+    conn = psycopg2.connect("dbname=hospital-db user=postgres password=root host=tfmserver.ddns.net")
 
     cur = conn.cursor()
 
