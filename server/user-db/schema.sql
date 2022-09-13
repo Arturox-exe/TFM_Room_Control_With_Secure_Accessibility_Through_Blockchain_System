@@ -29,7 +29,7 @@ CREATE TABLE hospital.user (
 
 
 INSERT INTO hospital.role(id,role) VALUES 
-    (1,'SuperUser'),
+    (1,'Doctor'),
     (2,'Patient'),
     (3,'Visitor');
 
